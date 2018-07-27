@@ -27,14 +27,13 @@ var addTwoNumbers = function(l1, l2) {
   const getNext = (obj) => obj ? obj.next : obj
   let listNow = res
   let nextAdd = 0
-  const bit = 10
   const floor = Math.floor
   while (l1 || l2 || nextAdd > 0)
   {
     let value1 = getVal(l1)
     let value2 = getVal(l2)
     const val = value1 + value2 + nextAdd
-    nextAdd = floor(val / bit)
+    nextAdd = floor(val / 10)
     listNow.next = new ListNode(val % bit)
     listNow = listNow.next
     l1 = getNext(l1)
